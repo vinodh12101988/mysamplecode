@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+.avlstyle{
+    text-decoration: none;
+    color: blue;
+}
+.notavlstyle{
+    text-decoration: none;
+    color: red;
+}
+
+.navbarstyle{
+    
+    color: yellowgreen;
+}

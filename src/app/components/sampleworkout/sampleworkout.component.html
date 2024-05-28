@@ -1,0 +1,49 @@
+<h3>This is sample page SampleWorkout</h3>
+
+ 
+
+
+<button class ="btn btn-warning" (click)="generateNumber()">fire event</button>
+
+<div>
+
+    
+     
+        <tr *ngFor="let obj of studentlist">
+            <td>{{obj.id}} </td>
+            <td>{{obj.name | random:3}} </td>
+        </tr>
+
+     
+</div>
+
+
+<!-- ngif example -->
+<div *ngIf="books1 then template1; else template2">
+Books are availalbe
+</div>
+<ng-template #template1>
+    <!-- ngfor example -->
+<div *ngFor="let obj of books1; index as ind; first as f "> 
+    <!-- ng switch  && ngclass example -->
+    <div [ngSwitch]="obj.bookstatus" [ngClass]="{'avlstyle': obj.bookstatus == 'available', 'notavlstyle': obj.bookstatus == 'Notavailable'}" > 
+        <div *ngSwitchCase="'available'" >
+            <!-- ngStyle example -->
+            <div [ngStyle]="{'color': 'magenta'}">Index => {{ind}} - first {{f}}</div>
+            <div>   {{obj.bookid}}   </div>
+            <div>   {{obj.bookname| random:1}}   </div>
+            <div>   {{obj.bookstatus}}  </div>
+        </div>
+        <div *ngSwitchDefault>
+            <div>Default booksIndex => {{ind}} - first {{f}}</div>
+            <div>   {{obj.bookid}}   </div>
+            <div>   {{obj.bookname| random:3}}   </div>
+            <div>   {{obj.bookstatus}}  </div>
+        </div>
+    </div>
+</div>
+</ng-template>
+<ng-template #template2>
+    Iam going to show not availalbe books
+</ng-template>
+

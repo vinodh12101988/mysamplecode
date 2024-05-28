@@ -1,0 +1,28 @@
+
+<div class ="container">
+    <h1>Products List </h1>
+<table class="table" *ngIf="productsdec && productsdec.length >0">
+    <thead>
+      <tr>
+        <th scope="col">ID#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Colour</th>
+        <th scope="col">Price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Prod of productsdec">
+        <th>{{Prod.id}}</th>
+        <td>{{Prod.product_Name}}</td>
+        <td>{{Prod.type}}</td>
+        <td>{{Prod.colour}}</td>
+        <td>{{Prod.price | currency : 'INR'}}</td>
+        <td><a [routerLink]="['/products','edit',Prod.id]">EDIT</a></td>
+        <td><a [routerLink]="[]" (click)="DeleteProduct(Prod.id)">DELETE</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="background-color:powderblue;" *ngif= "!productsdec || productsdec.length ==0"> No products to display</p> 
+</div>
