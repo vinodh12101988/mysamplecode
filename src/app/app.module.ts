@@ -9,6 +9,7 @@ import { AddProductsComponent } from './components/add-products/add-products.com
 import { EditComponentsComponent } from './components/edit-components/edit-components.component';
 import { SampleworkoutComponent } from './components/sampleworkout/sampleworkout.component';
 import { RandomPipe } from './random.pipe';
+import { TestpageComponent } from './testpage/testpage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RandomPipe } from './random.pipe';
     AddProductsComponent,
     EditComponentsComponent,
     SampleworkoutComponent,
-    RandomPipe
+    RandomPipe,
+    TestpageComponent
   ],
   imports: [
     BrowserModule,
